@@ -18,3 +18,12 @@ body {
 .header_title {
   font-family: 'Roboto Condensed', sans-serif;
 }
+::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  .center {
+    @apply flex items-center justify-center;
+  }
+}

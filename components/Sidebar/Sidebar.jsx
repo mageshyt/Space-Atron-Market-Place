@@ -5,7 +5,8 @@ import SideBarOptions from './SideBarOptions'
 import UserOption from './UserOption'
 import { RiLogoutCircleLine } from 'react-icons/ri'
 const styles = {
-  wrapper: 'bg-[#151620] w-[320px] flex  items-center flex-col h-full',
+  wrapper:
+    'bg-[#151620] w-[320px] md:flex hidden   md:items-center flex-col h-full',
   logoInfo:
     'flex ml-3 items-center justify-around mt-10 h-[70px] mb-10  bg-[#151620]',
   logo: 'text-3xl font-bold text-sky-400',
@@ -22,18 +23,18 @@ export const Sidebar = () => {
         </h1>
       </div>
       {/* sidebar options */}
-      {sideBarData.map((item, index) => {
-        return (
-          <SideBarOptions
-            key={index}
-            Icon2={item.icon2}
-            Icon={item.icon}
-            active={active}
-            setActive={setActive}
-            name={item.name}
-          />
-        )
-      })}
+        {sideBarData.map((item, index) => {
+          return (
+            <SideBarOptions
+              key={index}
+              Icon2={item.icon2}
+              Icon={item.icon}
+              active={active}
+              setActive={setActive}
+              name={item.name}
+            />
+          )
+        })}
       <div className="w-[80%] border-[1px] border-gray-600" />
       {/* user Option */}
       {userOptions.map((item, index) => {

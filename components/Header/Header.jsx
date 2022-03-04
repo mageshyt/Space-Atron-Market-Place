@@ -4,8 +4,8 @@ import { BsMoonFill, BsFillSunFill } from 'react-icons/bs'
 import { AiOutlineBell } from 'react-icons/ai'
 const Header = () => {
   return (
-    <div className="mt-[100px] ml-10 flex h-[100px] w-screen  select-none justify-center">
-      <div className=" flex w-full justify-around ">
+    <div className="flex h-[100px]  w-full  select-none  items-center ">
+      <div className=" flex w-full justify-center  lg:justify-around ">
         <SearchBar />
         {/* Theme switch */}
         <ThemeSwitch />
@@ -37,7 +37,7 @@ const ThemeSwitch = () => {
 
 const Notification = () => {
   return (
-    <div className="relative hidden h-12 items-center justify-around  rounded-xl  bg-[#151620] p-4  lg:flex ">
+    <div className="relative hidden h-12 items-center justify-around  rounded-xl  bg-[#151620] p-4  xl:flex ">
       <AiOutlineBell className="text-xl font-bold text-white" />
       <span className="absolute top-[-12px] left-[30px] flex h-5 w-5 animate-bounce items-center justify-center rounded-full bg-red-500 text-xs ">
         10
@@ -48,13 +48,13 @@ const Notification = () => {
 
 const UserDetail = ({}) => {
   return (
-    <div className="flex h-14 items-center justify-around space-x-2 rounded-xl bg-[#151620] py-6   px-8 text-white">
+    <div className="hidden h-14 items-center justify-around space-x-2 rounded-xl bg-[#151620] py-6 px-4 text-white   lg:flex lg:px-8">
       <img
         className="h-[40px] w-[40px] cursor-pointer rounded-full border-2 border-green-400 object-cover"
         src="https://avatars.githubusercontent.com/u/70838644?v=4"
         alt="profile"
       />
-      <span>Magesh</span>
+      <span className="lg:hidden xl:block">Magesh</span>
     </div>
   )
 }

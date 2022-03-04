@@ -6,7 +6,6 @@ const styles = {
   wrapper: ' flex w-full select-none justify-center px-8 items-center',
 }
 const UserOption = ({ name, Icon }) => {
-  console.log('Icon', Icon)
   return (
     <div className={styles.wrapper}>
       <div className={styles.Option}>
