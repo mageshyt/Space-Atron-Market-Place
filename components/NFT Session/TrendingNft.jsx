@@ -13,25 +13,14 @@ const styles = {
 }
 const TrendingNft = () => {
   return (
-    <div className=" mt-10 w-full overflow-y-scroll p-4 lg:ml-[80px]">
+    <div className=" mt-10 w-full overflow-y-scroll p-4 ">
       {/* Header */}
       <div className={styles.headerContainer}>
         <span className={styles.title}>Trending NFTs</span>
         <span className={styles.seeAll}>see all</span>
       </div>
       {/* Category */}
-      <div className={styles.category}>
-        {NFtCategory.map((category, index) => {
-          return (
-            <div key={index} className={styles.item}>
-              <span className=" center h-8 w-8 rounded-full bg-[#5b566368] p-2">
-                {category.emoji}
-              </span>
-              <span>{category.name}</span>
-            </div>
-          )
-        })}
-      </div>
+      <NftCategorySession NFtCategory={NFtCategory} />
       {/* COllection */}
       <div className={styles.collections}>
         {NftCollectionsData.map((collection, index) => {
@@ -44,3 +33,20 @@ const TrendingNft = () => {
 
 export default TrendingNft
 // 1C1628
+
+const NftCategorySession = ({ NFtCategory }) => {
+  return (
+    <div className={styles.category}>
+      {NFtCategory.map((category, index) => {
+        return (
+          <div key={index} className={styles.item}>
+            <span className=" center h-8 w-8 rounded-full bg-[#5b566368] p-2">
+              {category.emoji}
+            </span>
+            <span>{category.name}</span>
+          </div>
+        )
+      })}
+    </div>
+  )
+}

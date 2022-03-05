@@ -97,6 +97,13 @@ export const NFtCategory = [
 
 export const NftCollectionsData = [
   {
+    url: 'https://lh3.googleusercontent.com/Oz-pR9Tt1PLeanAqIqYwpUPejeMVEZzCCh-9dgZpFAr2_X3LQenwFMt4wBNTYslNVT9JGCQrrwabEE41NV1zKIIp1ENP8jPVn5fg_Q=w473',
+    name: 'Mavia Land',
+    price: '5.2',
+    owner:
+      'https://lh3.googleusercontent.com/KwtlzGCHxo9CgfOzLHrO1f6a8ty1QSBGFpGyof9DlVw4zpQ-N_tbqzAwI3kQNuItCM47XwwJp97jqs86k6fW304hRLgFpLrBMXPrGQ=s100',
+  },
+  {
     url: 'https://lh3.googleusercontent.com/tSc1HTkkO5TcFJuDigc5dUrd2ZGnQrmZwvEQs7Gze2_iLDk1zx9LWsOC0vaO1sjfYxlF8pwf2tQu99_vPCRfytAN8IuTtEqC6Dnq=w323',
     name: 'Invisible Friends #1116',
     price: '5.2',
@@ -145,5 +152,60 @@ export const NftCollectionsData = [
     price: '11.11',
     owner:
       'https://lh3.googleusercontent.com/XN0XuD8Uh3jyRWNtPTFeXJg_ht8m5ofDx6aHklOiy4amhFuWUa0JaR6It49AH8tlnYS386Q0TW_-Lmedn0UET_ko1a3CbJGeu5iHMg=s130',
+  },
+]
+
+// ! nft top creators
+
+export const creators = [
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/mUlxzid0LwTeLJXQGgLZJ1S4-jAi3OopFMd9JcPf0Jtav1MZsb8hLU2i83cZGaL85y1C-Yx8V-z4Nijux4_Vx1zWMghfAvTFMhlPDSU=s130',
+    name: 'iconicimagesnft',
+  },
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/lW22aEwUE0IqGaYm5HRiMS8DwkDwsdjPpprEqYnBqo2s7gSR-JqcYOjU9LM6p32ujG_YAEd72aDyox-pdCVK10G-u1qZ3zAsn2r9=s100',
+    name: 'Invisible Friends ',
+  },
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/BdxvLseXcfl57BiuQcQYdJ64v-aI8din7WPk0Pgo3qQFhAUH-B6i-dCqqc_mCkRIzULmwzwecnohLhrcH8A9mpWIZqA7ygc52Sr81hE=s100',
+    name: 'CryptoPunks ',
+  },
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s100',
+    name: 'Bored Ape Club',
+  },
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/DA_iUjt7S9PdmAANh0aqMkxYVhvGogTuKbMSzFO3uEnbvRRt5hn1B8DuN50HQpkRtH34QX7EOYYKIayz1q5KgZWfgLedNo7xBQzK=s100',
+    name: 'WonderPals',
+  },
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/0E-6rL-B-dLFiu-9tipTI7zXaaK0DHEQ4699BVC0nMQ9XRIqgeJ7XrhER-bXYSEsSIex-5CW2fr7bUaCFV-978YiWABy8nKYrxOp=s100',
+    name: 'DentedFellsNft',
+  },
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/3Rk7PFs3XX1ja50aKi8lxh9x67yNX5kZLti7gPlHvWsS7iuXSUdQGctoOXtto7uLLLnvwxe1uhWN6WmmZvVWCcQ-Qm7a8K2KFmEZJC4=s100',
+    name: 'DEGEN TOONZ COLLECTION',
+  },
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/SXH8tW1siikB80rwCRnjm1a5xM_MwTg9Xl9Db6mioIk9HIlDM09pVoSR7GKJgS6ulSUpgW9BDtMk_ePX_NKgO9A=s100',
+    name: 'The Sandbox',
+  },
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/3Rk7PFs3XX1ja50aKi8lxh9x67yNX5kZLti7gPlHvWsS7iuXSUdQGctoOXtto7uLLLnvwxe1uhWN6WmmZvVWCcQ-Qm7a8K2KFmEZJC4=s100',
+    name: 'HOWLERZ',
+  },
+  {
+    profileImg:
+      'https://lh3.googleusercontent.com/Qd1IEPYz_0YlMaclPwb6_9PyP7afZIzH15IdIU2X6t1Wvg81DwpAaWOY0cNmxy173C4yMA7sM3xF9-HJsCSKJdx6KvDR3old3IKuTIc=s100',
+    name: 'CyberBrokers V3',
   },
 ]
