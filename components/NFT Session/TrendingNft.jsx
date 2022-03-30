@@ -1,5 +1,6 @@
 import React from 'react'
 import { NFtCategory, NftCollectionsData } from '../../assets/data'
+import Banner from '../Banner/Banner'
 import NftCollection from './NftCollection'
 const styles = {
   headerContainer: 'flex justify-between items-center',
@@ -9,11 +10,11 @@ const styles = {
     'flex cursor-pointer justify-between space-x-4 select-none overflow-x-scroll mt-10 items-center',
   item: 'bg-[#151620] py-2 flex rounded-md items-center text-sm space-x-2 px-4 text-white',
   collections:
-    'grid  h-screen pb-[100px] grid-cols-1 place-items-center  lg:grid-cols-2 gap-10 overflow-y-scroll  mt-10',
+    'grid absolute   pb-[100px] grid-cols-1 place-items-center  lg:grid-cols-2 gap-10 overflow-y-scroll  mt-10',
 }
 const TrendingNft = () => {
   return (
-    <div className=" mt-10 w-full overflow-y-scroll p-4 ">
+    <div className=" relative mt-5 h-full w-full  overflow-y-scroll p-4  ">
       {/* Header */}
       <div className={styles.headerContainer}>
         <span className={styles.title}>Trending NFTs</span>

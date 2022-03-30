@@ -68,13 +68,13 @@ const UserDetail = ({ currentAccount }) => {
               <span className="hidden xl:block">Magesh</span>
             </>
           ) : (
-            <>
+            <div className="item-center flex cursor-pointer space-x-2">
               <BiUser
                 onClick={() => setModalIsOpen(!modalIsOpen)}
                 className="text-xl"
               />
               <span>Login</span>
-            </>
+            </div>
           )}
         </div>
       </Link>
