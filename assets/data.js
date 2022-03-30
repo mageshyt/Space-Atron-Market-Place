@@ -23,7 +23,9 @@ import {
   FcOvertime,
   FcMoneyTransfer,
   FcAlarmClock,
+  FcIdea,
 } from 'react-icons/fc'
+import { GiDigDug } from 'react-icons/gi'
 import { MdHistory } from 'react-icons/md'
 import { BsGraphUp } from 'react-icons/bs'
 import { MdOutlineDashboardCustomize } from 'react-icons/md'
@@ -46,9 +48,13 @@ export const sideBarData = [
   },
   {
     name: 'Favorite',
-
     icon: BiBookmarkHeart,
     icon2: FcLike,
+  },
+  {
+    name: 'Mint',
+    icon: GiDigDug,
+    icon2: FcIdea,
   },
 ]
 
@@ -162,50 +168,60 @@ export const creators = [
     profileImg:
       'https://lh3.googleusercontent.com/mUlxzid0LwTeLJXQGgLZJ1S4-jAi3OopFMd9JcPf0Jtav1MZsb8hLU2i83cZGaL85y1C-Yx8V-z4Nijux4_Vx1zWMghfAvTFMhlPDSU=s130',
     name: 'iconicimagesnft',
+    AtUser: '@iconic',
   },
   {
     profileImg:
       'https://lh3.googleusercontent.com/lW22aEwUE0IqGaYm5HRiMS8DwkDwsdjPpprEqYnBqo2s7gSR-JqcYOjU9LM6p32ujG_YAEd72aDyox-pdCVK10G-u1qZ3zAsn2r9=s100',
     name: 'Invisible Friends ',
+    AtUser: '@Invisible',
   },
   {
     profileImg:
       'https://lh3.googleusercontent.com/BdxvLseXcfl57BiuQcQYdJ64v-aI8din7WPk0Pgo3qQFhAUH-B6i-dCqqc_mCkRIzULmwzwecnohLhrcH8A9mpWIZqA7ygc52Sr81hE=s100',
     name: 'CryptoPunks ',
+    AtUser: '@Punks',
   },
   {
     profileImg:
       'https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s100',
     name: 'Bored Ape Club',
+    AtUser: '@Bored',
   },
   {
     profileImg:
       'https://lh3.googleusercontent.com/DA_iUjt7S9PdmAANh0aqMkxYVhvGogTuKbMSzFO3uEnbvRRt5hn1B8DuN50HQpkRtH34QX7EOYYKIayz1q5KgZWfgLedNo7xBQzK=s100',
     name: 'WonderPals',
+    AtUser: '@Wonder',
   },
   {
     profileImg:
       'https://lh3.googleusercontent.com/0E-6rL-B-dLFiu-9tipTI7zXaaK0DHEQ4699BVC0nMQ9XRIqgeJ7XrhER-bXYSEsSIex-5CW2fr7bUaCFV-978YiWABy8nKYrxOp=s100',
     name: 'DentedFellsNft',
+    AtUser: '@Dented',
   },
   {
     profileImg:
       'https://lh3.googleusercontent.com/3Rk7PFs3XX1ja50aKi8lxh9x67yNX5kZLti7gPlHvWsS7iuXSUdQGctoOXtto7uLLLnvwxe1uhWN6WmmZvVWCcQ-Qm7a8K2KFmEZJC4=s100',
-    name: 'DEGEN TOONZ COLLECTION',
+    name: 'DEGEN TOONZ',
+    AtUser: '@DEGEN',
   },
   {
     profileImg:
       'https://lh3.googleusercontent.com/SXH8tW1siikB80rwCRnjm1a5xM_MwTg9Xl9Db6mioIk9HIlDM09pVoSR7GKJgS6ulSUpgW9BDtMk_ePX_NKgO9A=s100',
     name: 'The Sandbox',
+    AtUser: '@Sandbox',
   },
   {
     profileImg:
       'https://lh3.googleusercontent.com/3Rk7PFs3XX1ja50aKi8lxh9x67yNX5kZLti7gPlHvWsS7iuXSUdQGctoOXtto7uLLLnvwxe1uhWN6WmmZvVWCcQ-Qm7a8K2KFmEZJC4=s100',
     name: 'HOWLERZ',
+    AtUser: '@Howlerz',
   },
   {
     profileImg:
       'https://lh3.googleusercontent.com/Qd1IEPYz_0YlMaclPwb6_9PyP7afZIzH15IdIU2X6t1Wvg81DwpAaWOY0cNmxy173C4yMA7sM3xF9-HJsCSKJdx6KvDR3old3IKuTIc=s100',
     name: 'CyberBrokers V3',
+    AtUser: '@Cyber',
   },
 ]

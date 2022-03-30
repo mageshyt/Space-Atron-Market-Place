@@ -4,7 +4,7 @@ import { creators } from '../../assets/data'
 import TopCreators from './TopCreators'
 const Widgets = () => {
   return (
-    <div className=" mt-[30px] flex h-full flex-col items-center space-y-4">
+    <div className=" mt-[30px] hidden h-full flex-col items-center space-y-4 lg:flex">
       {/* Balance and chart  */}
 
       <div className="h-[300px] w-[350px] rounded-xl bg-[#151620] p-4 ">
@@ -18,10 +18,21 @@ const Widgets = () => {
         <BalanceChart />
       </div>
       {/* Top Creators */}
-      <div className="flex h-[400px] w-[350px] flex-col space-y-3 overflow-y-scroll rounded-2xl bg-[#151620] p-4">
-        {creators.map((creator, index) => {
-          return <TopCreators creator={creator} key={index} />
-        })}
+      <div className="flex h-[400px] w-[350px] flex-col  rounded-2xl bg-[#151620] p-4">
+        <div className=" flex items-center justify-between">
+          <span className="  text-center text-2xl text-gray-100">
+            Top Creators
+          </span>
+          <span className={'text-md cursor-pointer text-green-400'}>
+            see all
+          </span>
+        </div>
+        {/* Collection */}
+        <div className=" overflow-y-scroll">
+          {creators.map((creator, index) => {
+            return <TopCreators creator={creator} key={index} />
+          })}
+        </div>
       </div>
     </div>
   )

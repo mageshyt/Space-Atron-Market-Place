@@ -6,7 +6,7 @@ const styles = {
   title: 'text-2xl font-bold text-gray-50',
   seeAll: 'text-md text-green-500',
   category:
-    'flex justify-between space-x-4 select-none overflow-x-scroll mt-10 items-center',
+    'flex cursor-pointer justify-between space-x-4 select-none overflow-x-scroll mt-10 items-center',
   item: 'bg-[#151620] py-2 flex rounded-md items-center text-sm space-x-2 px-4 text-white',
   collections:
     'grid  h-screen pb-[100px] grid-cols-1 place-items-center  lg:grid-cols-2 gap-10 overflow-y-scroll  mt-10',
