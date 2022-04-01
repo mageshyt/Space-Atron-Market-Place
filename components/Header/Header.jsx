@@ -53,7 +53,9 @@ const Notification = () => {
 
 const UserDetail = ({ currentAccount }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
-
+  const {
+    userData: { name, profileImage },
+  } = useContext(SpaceAtronContext)
   return (
     <div className=" flex h-12 items-center justify-around space-x-2 rounded-xl bg-[#151620] py-4 px-[12px] text-white   lg:flex lg:px-[40px]">
       <Link href={'/?login=1'}>
@@ -62,19 +64,19 @@ const UserDetail = ({ currentAccount }) => {
             <>
               <img
                 className="h-[40px] w-[40px] cursor-pointer rounded-full border-2 border-green-400 object-cover"
-                src="https://avatars.githubusercontent.com/u/70838644?v=4"
+                src={profileImage}
                 alt="profile"
               />
-              <span className="hidden xl:block">Magesh</span>
+              <span className="hidden xl:block">{name}</span>
             </>
           ) : (
-            <>
+            <div className="flex cursor-pointer space-x-2">
               <BiUser
                 onClick={() => setModalIsOpen(!modalIsOpen)}
                 className="text-xl"
               />
               <span>Login</span>
-            </>
+            </div>
           )}
         </div>
       </Link>

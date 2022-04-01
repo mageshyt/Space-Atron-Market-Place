@@ -4,7 +4,6 @@ import { sideBarData, userOptions } from '../../assets/data'
 import SideBarOptions from './SideBarOptions'
 import UserOption from './UserOption'
 import { RiLogoutCircleLine } from 'react-icons/ri'
-import { useDisconnect } from '@thirdweb-dev/react'
 import { SpaceAtronContext } from '../../context/SpaceAtronContext'
 
 const styles = {
@@ -16,9 +15,13 @@ const styles = {
 }
 export const Sidebar = () => {
   //! log out
-  const { disconnectFromWallet } = useContext(SpaceAtronContext)
+  const {
+    disconnectFromWallet,
+    userData: { walletAddress },
+    active,setActive
+  } = useContext(SpaceAtronContext)
   // !for active class
-  const [active, setActive] = React.useState('Dashboard')
+ 
   return (
     <div className={styles.wrapper}>
       <div className={styles.logoInfo}>
@@ -46,12 +49,24 @@ export const Sidebar = () => {
         return <UserOption key={index} name={item.name} Icon={item.icon} />
       })}
       {/* Log out */}
+      {/* wallet*/}
+      <div>
+        {walletAddress && (
+          <span className="text-xl text-green-400 ">
+            @ {walletAddress?.slice(0, 4)}...{walletAddress?.slice(38)}
+          </span>
+        )}
+      </div>
       <div
         onClick={() => disconnectFromWallet()}
         className="mt-auto mb-4 flex cursor-pointer items-center space-x-2"
       >
-        <RiLogoutCircleLine className="text-2xl text-red-500" />
-        <span className="text-gray-500">Log out</span>
+        {walletAddress && (
+          <>
+            <RiLogoutCircleLine className="text-2xl text-red-500" />
+            <span className="text-gray-500">Log out</span>
+          </>
+        )}
       </div>
     </div>
   )

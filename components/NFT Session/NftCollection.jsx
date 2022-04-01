@@ -8,11 +8,17 @@ const styles = {
   like: 'cursor-pointer text-xl text-white',
   ActiveLike: 'cursor-pointer text-xl text-red-500',
 }
-const NftCollection = ({ collection: { url, name, price, owner } }) => {
+const NftCollection = ({ collection: { url, name, price, owner, mint } }) => {
   // ! for handle like
   const [liked, setLiked] = React.useState(false)
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={
+        !!mint
+          ? `${styles.wrapper}  h-[470px] w-[370px]  `
+          : `${styles.wrapper} `
+      }
+    >
       <div>
         <img className={styles.NftImage} src={url} alt={name} />
       </div>
@@ -30,11 +36,7 @@ const NftCollection = ({ collection: { url, name, price, owner } }) => {
       </div>
       {/* Owner and price */}
       <div className=" flex items-center justify-between p-4">
-        <img
-          src={owner}
-          className="h-8 w-8 rounded-full object-contain"
-          alt=""
-        />
+        <img src={owner} className="h-8 w-8 rounded-full object-cover" alt="" />
         <div className="flex cursor-pointer items-center space-x-2 rounded-xl bg-[#2b3f3c] p-3 text-[#73BC7F] hover:bg-[#334340]">
           <FaEthereum className=" " />
           <span>{price} ETH</span>

@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from 'react'
 import { faker } from '@faker-js/faker'
 import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react'
 import { client } from '../lib/client'
+import { fetchUserDetails } from '../lib/UserDetails'
 export const SpaceAtronContext = createContext()
 // ! providers
 export const SpaceAtronProvider = ({ children }) => {
@@ -13,14 +14,25 @@ export const SpaceAtronProvider = ({ children }) => {
   const [appStatus, SetAppStatus] = useState('notConnected')
   //! user Data
   const [userData, setUserData] = useState({})
-  //! to create account
+  //! render image
+  const [RenderImage, setRenderImage] = useState(null)
+  //! Active
+  const [active, setActive] = useState('Dashboard')
   useEffect(() => {
-    if (!window.ethereum) return
-    createAccount()
+    if (currentAccount) {
+      createAccount(useAddress)
+    }
   }, [currentAccount])
-
-
-  
+  useEffect(async () => {
+    if (currentAccount) {
+      const res = await fetchUserDetails(currentAccount)
+      setUserData({
+        name: res?.name,
+        profileImage: res?.profileImage,
+        walletAddress: res?.walletAddress,
+      })
+    }
+  }, [currentAccount])
   // ! router
   const router = useRouter()
   //! connect to wallet
@@ -30,6 +42,7 @@ export const SpaceAtronProvider = ({ children }) => {
     try {
       SetAppStatus('loading')
       await connectWithMetamask()
+
       SetAppStatus('connected')
     } catch (err) {
       console.log(err)
@@ -73,6 +86,11 @@ export const SpaceAtronProvider = ({ children }) => {
         disconnectFromWallet,
         currentAccount,
         connectToWallet,
+        userData,
+        RenderImage,
+        setRenderImage,
+        active,
+        setActive,
       }}
     >
       {children}
