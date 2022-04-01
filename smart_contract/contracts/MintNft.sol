@@ -19,7 +19,7 @@ Counters.Counter _tokenIds;
     }
     constructor() ERC721("MintNft","PIN"){}
 //! internal functionk
-function _setTokenURI(uint256 _tokenId, string memory _tokenURI) internal{
+function _setTokenId(uint256 _tokenId, string memory _tokenURI) internal{
     _tokenURIs[_tokenId] = _tokenURI;
    }
    //! to override some time use use vitual function
@@ -43,6 +43,11 @@ function _setTokenURI(uint256 _tokenId, string memory _tokenURI) internal{
     }
     // minting 
     function mint(address recipents, string  memory _uri) public returns (uint256){
+ uint256 newId=_tokenIds.current();
+        _mint(recipents,newId);
+        _setTokenId(newId,_uri);
+        _tokenIds.increment(); // after minting it is going to increment the token id
+        return newId;
 
     }
 }

@@ -13,7 +13,6 @@ const style = {
 const LoginModal = () => {
   const { connectToWallet, currentAccount, appStatus } =
     useContext(SpaceAtronContext)
-  console.log('connectToWallet 👉', currentAccount, appStatus)
   return (
     <div className="h-[350px] w-[400px] rounded-lg bg-[#0c0b0a] lg:h-[350px]  lg:w-[600px]">
       <div className=" grid h-full w-full grid-cols-2 grid-rows-2">
@@ -74,10 +73,10 @@ const Wallet = ({ name, img_url, popular, appStatus }) => (
         className={
           appStatus === 'connected'
             ? `${style.popular} text-green-400`
-            : `${style.popular}`
+            : `${style.popular} text-red-500`
         }
       >
-        {appStatus === 'connected' ? `Connected` : `popular`}
+        {appStatus === 'connected' ? `Connected` : `disconnected`}
       </p>
     ) : null}
   </div>

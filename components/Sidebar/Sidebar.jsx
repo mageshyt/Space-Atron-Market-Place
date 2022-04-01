@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { AiFillBank } from 'react-icons/ai'
 import { sideBarData, userOptions } from '../../assets/data'
 import SideBarOptions from './SideBarOptions'
 import UserOption from './UserOption'
 import { RiLogoutCircleLine } from 'react-icons/ri'
+import { useDisconnect } from '@thirdweb-dev/react'
+import { SpaceAtronContext } from '../../context/SpaceAtronContext'
+
 const styles = {
   wrapper:
     'bg-[#151620] w-[320px] md:flex hidden   md:items-center flex-col h-full',
@@ -12,6 +15,8 @@ const styles = {
   logo: 'text-3xl font-bold text-sky-400',
 }
 export const Sidebar = () => {
+  //! log out
+  const { disconnectFromWallet } = useContext(SpaceAtronContext)
   // !for active class
   const [active, setActive] = React.useState('Dashboard')
   return (
@@ -23,25 +28,28 @@ export const Sidebar = () => {
         </h1>
       </div>
       {/* sidebar options */}
-        {sideBarData.map((item, index) => {
-          return (
-            <SideBarOptions
-              key={index}
-              Icon2={item.icon2}
-              Icon={item.icon}
-              active={active}
-              setActive={setActive}
-              name={item.name}
-            />
-          )
-        })}
+      {sideBarData.map((item, index) => {
+        return (
+          <SideBarOptions
+            key={index}
+            Icon2={item.icon2}
+            Icon={item.icon}
+            active={active}
+            setActive={setActive}
+            name={item.name}
+          />
+        )
+      })}
       <div className="w-[80%] border-[1px] border-gray-600" />
       {/* user Option */}
       {userOptions.map((item, index) => {
         return <UserOption key={index} name={item.name} Icon={item.icon} />
       })}
       {/* Log out */}
-      <div className="mt-auto mb-4 flex cursor-pointer items-center space-x-2">
+      <div
+        onClick={() => disconnectFromWallet()}
+        className="mt-auto mb-4 flex cursor-pointer items-center space-x-2"
+      >
         <RiLogoutCircleLine className="text-2xl text-red-500" />
         <span className="text-gray-500">Log out</span>
       </div>

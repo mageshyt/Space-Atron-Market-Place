@@ -58,7 +58,7 @@ const UserDetail = ({ currentAccount }) => {
     <div className=" flex h-12 items-center justify-around space-x-2 rounded-xl bg-[#151620] py-4 px-[12px] text-white   lg:flex lg:px-[40px]">
       <Link href={'/?login=1'}>
         <div className="center space-x-2">
-          {currentAccount.length > 0 ? (
+          {currentAccount?.length > 0 ? (
             <>
               <img
                 className="h-[40px] w-[40px] cursor-pointer rounded-full border-2 border-green-400 object-cover"
