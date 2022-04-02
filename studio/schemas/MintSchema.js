@@ -16,13 +16,18 @@ export const MintSchema = {
     {
       name: 'image',
       title: 'Image',
-      type: 'image',
+      type: 'string',
     },
     {
       name: 'author',
       title: 'Author',
       type: 'reference',
       to: [{ type: 'users' }],
+    },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'number',
     },
     {
       name: 'timestamp',

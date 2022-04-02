@@ -22,7 +22,6 @@ const customStyles = {
 Modal.setAppElement('#__next')
 const ModalBox = ({ isOpen }) => {
   const { appStatus, SetAppStatus } = useContext(SpaceAtronContext)
-  console.log('appStatus 👉', appStatus)
   const router = useRouter()
   return (
     <div>

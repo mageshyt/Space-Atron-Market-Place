@@ -17,11 +17,13 @@ export const Sidebar = () => {
   //! log out
   const {
     disconnectFromWallet,
+    currentAccount,
     userData: { walletAddress },
-    active,setActive
+    active,
+    setActive,
   } = useContext(SpaceAtronContext)
   // !for active class
- 
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.logoInfo}>
@@ -51,7 +53,7 @@ export const Sidebar = () => {
       {/* Log out */}
       {/* wallet*/}
       <div>
-        {walletAddress && (
+        {currentAccount?.length > 0 && (
           <span className="text-xl text-green-400 ">
             @ {walletAddress?.slice(0, 4)}...{walletAddress?.slice(38)}
           </span>
@@ -61,7 +63,7 @@ export const Sidebar = () => {
         onClick={() => disconnectFromWallet()}
         className="mt-auto mb-4 flex cursor-pointer items-center space-x-2"
       >
-        {walletAddress && (
+        {currentAccount?.length > 0 && (
           <>
             <RiLogoutCircleLine className="text-2xl text-red-500" />
             <span className="text-gray-500">Log out</span>

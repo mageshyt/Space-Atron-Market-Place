@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { FaEthereum } from 'react-icons/fa'
 import { SpaceAtronContext } from '../../context/SpaceAtronContext'
-
+import SelectImage from './SelectImage'
 const PreView = () => {
   const { userData, RenderImage } = useContext(SpaceAtronContext)
   const collection = {

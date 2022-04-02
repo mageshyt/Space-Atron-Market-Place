@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { SpaceAtronContext } from '../../context/SpaceAtronContext'
 const style = { fileInput: 'hidden' }
 const SelectImage = () => {
-  const { setRenderImage } = useContext(SpaceAtronContext)
+  const { setRenderImage, setMintImage } = useContext(SpaceAtronContext)
   return (
     <div>
       <label className="cursor-pointer" htmlFor="image-upload">
@@ -21,6 +21,7 @@ const SelectImage = () => {
             render.onload = (File) => {
               setRenderImage(event.target.result)
             }
+            setMintImage(e.target.files[0])
           }}
         />
         Select File

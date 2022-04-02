@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NFtCategory, NftCollectionsData } from '../../assets/data'
 import NftCollection from './NftCollection'
+import { fetchNftDetails } from '../../lib/GetNftDeatil'
+import { SpaceAtronContext } from '../../context/SpaceAtronContext'
 const styles = {
   headerContainer: 'flex justify-between items-center',
   title: 'text-2xl font-bold text-gray-50',
@@ -11,7 +13,20 @@ const styles = {
   collections:
     'grid  h-screen pb-[100px] grid-cols-1 place-items-center  lg:grid-cols-2 gap-10 overflow-y-scroll  mt-10',
 }
+
 const TrendingNft = () => {
+  const { currentAccount } = React.useContext(SpaceAtronContext)
+  //! image img_url
+  // const imageUrl = 'https://gateway.pinata.cloud/ipfs/'
+  // const [nftDetails, setNftDetails] = React.useState([])
+  // useEffect(async () => {
+  //   const res = await fetchNftDetails(currentAccount)
+  //   res.forEach(async (item) => {
+  //     setNftDetails(item)
+  //   })
+  //   console.log('nftDetails', nftDetails)
+  // }, [currentAccount])
+
   return (
     <div className=" mt-10 w-full overflow-y-scroll p-4 ">
       {/* Header */}

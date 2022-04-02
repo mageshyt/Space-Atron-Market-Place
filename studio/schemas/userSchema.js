@@ -27,7 +27,7 @@ export const UserSchema = {
       name: 'Nfts',
       title: 'Nfts',
       type: 'array',
-      of: [{ type: 'mintNft' }],
+      of: [{ type: 'reference', to: [{ type: 'mintNft' }] }],
     },
   ],
 }

@@ -4,6 +4,8 @@ import { faker } from '@faker-js/faker'
 import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react'
 import { client } from '../lib/client'
 import { fetchUserDetails } from '../lib/UserDetails'
+import { ethers } from 'ethers'
+import { contractABI, contractAddress } from '../lib/contracts'
 export const SpaceAtronContext = createContext()
 // ! providers
 export const SpaceAtronProvider = ({ children }) => {
@@ -18,11 +20,17 @@ export const SpaceAtronProvider = ({ children }) => {
   const [RenderImage, setRenderImage] = useState(null)
   //! Active
   const [active, setActive] = useState('Dashboard')
-  useEffect(() => {
-    if (currentAccount) {
-      createAccount(useAddress)
-    }
-  }, [currentAccount])
+  //! nft title
+  const [nftTitle, setNftTitle] = useState('')
+  //! price
+  const [price, setPrice] = useState('')
+  //! nft description
+  const [nftDescription, setNftDescription] = useState('')
+  //! nft bid
+  const [bid, setBid] = useState('')
+  //!  mint image
+  const [mintImage, setMintImage] = useState(null)
+
   useEffect(async () => {
     if (currentAccount) {
       const res = await fetchUserDetails(currentAccount)
@@ -44,6 +52,7 @@ export const SpaceAtronProvider = ({ children }) => {
       await connectWithMetamask()
 
       SetAppStatus('connected')
+      createAccount(useAddress)
     } catch (err) {
       console.log(err)
       return SetAppStatus('noMetaMask')
@@ -78,6 +87,24 @@ export const SpaceAtronProvider = ({ children }) => {
       console.log(err)
     }
   }
+  let metamask
+  if (typeof window !== 'undefined') {
+    metamask = window.ethereum
+  }
+  const getEthereumContract = async () => {
+    // ! if metamast is not exist then return it
+    if (!metamask) return
+    const provider = new ethers.providers.Web3Provider(metamask)
+    const signer = provider.getSigner()
+    // ! creating new contract
+    const transactionContract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      signer
+    )
+
+    return transactionContract
+  }
   return (
     <SpaceAtronContext.Provider
       value={{
@@ -91,6 +118,17 @@ export const SpaceAtronProvider = ({ children }) => {
         setRenderImage,
         active,
         setActive,
+        setNftDescription,
+        setNftTitle,
+        nftDescription,
+        nftTitle,
+        getEthereumContract,
+        price,
+        setPrice,
+        bid,
+        setBid,
+        mintImage,
+        setMintImage,
       }}
     >
       {children}
