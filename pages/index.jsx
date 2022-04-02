@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import { Sidebar } from '../components/Sidebar/Sidebar'
-import Header from '../components/Header/Header'
+import Sidebar from '../components/Header&SideBar/Sidebar'
+import Header from '../components/Header&SideBar/Header'
 import Banner from '../components/Banner/Banner'
 import TrendingNft from '../components/NFT Session/TrendingNft'
 import Widgets from '../components/Widgets/Widgets'

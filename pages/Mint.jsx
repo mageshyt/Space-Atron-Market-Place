@@ -1,6 +1,6 @@
 import React from 'react'
 import PreView from '../components/Mint/PreView'
-import { Sidebar } from '../components/Sidebar/Sidebar'
+import { Sidebar } from '../components/Header/Sidebar'
 import Widgets from '../components/Widgets/Widgets'
 import SelectImage from '../components/Mint/SelectImage'
 import NFTDetail from '../components/Mint/NFTDetail'

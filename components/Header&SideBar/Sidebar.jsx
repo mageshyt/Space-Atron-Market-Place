@@ -13,7 +13,7 @@ const styles = {
     'flex ml-3 items-center justify-around mt-10 h-[70px] mb-10  bg-[#151620]',
   logo: 'text-3xl font-bold text-sky-400',
 }
-export const Sidebar = () => {
+const Sidebar = () => {
   //! log out
   const {
     disconnectFromWallet,
@@ -73,3 +73,4 @@ export const Sidebar = () => {
     </div>
   )
 }
+export default Sidebar
